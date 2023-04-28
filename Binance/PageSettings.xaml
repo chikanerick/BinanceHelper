@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Binance.PageSettings"
+             Title="Настройки">
+
+
+
+
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.3*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Frame BackgroundColor="#141722" HasShadow="True"
+           CornerRadius="5"
+               Margin="15"
+           HorizontalOptions="FillAndExpand"
+           VerticalOptions="FillAndExpand">
+
+
+            <VerticalStackLayout>
+                <Label Margin="10">API Binance</Label>
+                <Editor></Editor>
+
+                <Label Margin="10">Secret Key Binance</Label>
+                <Editor></Editor>
+                <Button TextColor="White" Text="Подтвердить" BackgroundColor="#080a15" HeightRequest="40" Margin="0,30"></Button>
+            </VerticalStackLayout>
+        </Frame>
+        <Image Source="back.jpg"
+           Aspect="AspectFill"
+           Grid.Column="1"
+           HorizontalOptions="FillAndExpand"
+           VerticalOptions="FillAndExpand" />
+    </Grid>
+
+</ContentPage>

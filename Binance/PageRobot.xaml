@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Binance.PageRobot"
+             Title="Автоматизированная торговля">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Frame Grid.Column="0" BackgroundColor="#141722" Margin="10" CornerRadius="10">
+            <VerticalStackLayout>
+
+
+                <Label FontSize="20" Margin="10">Значение таймфрейма для параметра MA:</Label>
+                <HorizontalStackLayout>
+                    <RadioButton Content="ma(7),ma(25)"></RadioButton>
+                    <RadioButton Content="ma(12),ma(26)"></RadioButton>
+                    <RadioButton Content="ma(1),ma(7)"></RadioButton>
+                </HorizontalStackLayout>
+                <VerticalStackLayout Margin="0,20">
+                    <Label FontSize="20" Margin="10">Обьем сделки:</Label>
+                    <HorizontalStackLayout>
+                        <RadioButton Content="10$"></RadioButton>
+                        <RadioButton Content="20$"></RadioButton>
+                        <RadioButton Content="30$"></RadioButton>
+                        <RadioButton Content="50$"></RadioButton>
+                        <RadioButton Content="100$"></RadioButton>
+                        
+                    </HorizontalStackLayout>
+                    <Label FontSize="17">Баланс спотового кошелька::</Label>
+                    <VerticalStackLayout Margin="0,20">
+                        <Label FontSize="20" Margin="10">Тейк-профит:</Label>
+                        <HorizontalStackLayout>
+                            <RadioButton Content="1%"></RadioButton>
+                            <RadioButton Content="2%"></RadioButton>
+                            <RadioButton Content="3%"></RadioButton>
+                            <RadioButton Content="4%"></RadioButton>
+                            <RadioButton Content="5%"></RadioButton>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout  Margin="0,20">
+                        <Label FontSize="20" Margin="10">Стоп-лосс:</Label>
+                        <HorizontalStackLayout>
+                            <RadioButton Content="1%"></RadioButton>
+                            <RadioButton Content="2%"></RadioButton>
+                            <RadioButton Content="3%"></RadioButton>
+                            <RadioButton Content="4%"></RadioButton>
+                            <RadioButton Content="5%"></RadioButton>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout  Margin="0,20">
+                        <Label FontSize="20" Margin="10">Торговая пара:</Label>
+                        <HorizontalStackLayout>
+                            <RadioButton Content="BTC/USDT"></RadioButton>
+                            <RadioButton Content="ETH/USDT"></RadioButton>
+                            <RadioButton Content="BNB/USDT"></RadioButton>
+                           
+                        </HorizontalStackLayout>
+                        <Button  Text="Подтвердить" Margin="0,10" ></Button>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+               
+
+
+
+            </VerticalStackLayout>
+            
+
+        </Frame>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Frame Grid.Row="0" BackgroundColor="#141722" Margin="10" CornerRadius="10">
+                <VerticalStackLayout>
+                    <Label FontSize="20" Margin="0">Режим торговли</Label>
+                    <RadioButton Content="Фьючерсы"></RadioButton>
+                    <RadioButton Content="Спот"></RadioButton>
+
+
+                    <Label FontSize="15" Margin="0,20">!Вниммание! Режим фьючерсы может вести за собой риски. Также обратите внимание, что автоматическая торговля на бирже может быть опасной и потребовать дополнительного изучения и проверки перед ее использованием.</Label>
+
+
+                    <Button  BackgroundColor="#0c4f02" Text="Запустить" Margin="0,40" ></Button>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame Grid.Row="1" BackgroundColor="#141722" Margin="10" CornerRadius="10">
+                
+                 
+                    <VerticalStackLayout>
+                        <Label FontSize="20" Margin="0">Статистика</Label>
+                        <Label FontSize="15" Margin="0,10">Количетсво сделок: ~</Label>
+                    <Label FontSize="15" Margin="0,10">Положительные сделки: ~</Label>
+                    <Label FontSize="15" Margin="0,10">Отрицательные сделки: ~</Label>
+                    <Label FontSize="15" Margin="0,10">Процент прибыли/убытка: ~</Label>
+                    <Label FontSize="15" Margin="0,10">прибыль/убыток: ~</Label>
+                    <Button BackgroundColor="#4f020d" Text="Завершить" Margin="0,10" ></Button>
+                </VerticalStackLayout>
+                   
+                
+            </Frame>
+        </Grid>
+    </Grid>
+
+</ContentPage>

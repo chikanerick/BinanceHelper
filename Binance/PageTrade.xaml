@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Binance.PageTrade"
+             Title="Рынок">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.7*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <Frame BackgroundColor="#141722" HasShadow="True"
+           CornerRadius="5"
+               Margin="15"
+           HorizontalOptions="FillAndExpand"
+           VerticalOptions="FillAndExpand">
+            
+                <CollectionView x:Name ="MyCollectionView" ItemsSource="{Binding Cryptocurrencies}" >
+                    <CollectionView.ItemTemplate >
+                        <DataTemplate>
+
+                      
+                        <HorizontalStackLayout HorizontalOptions="FillAndExpand" Spacing="10" Margin="10">
+
+                            <Grid>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Grid.Column="0" HorizontalOptions="Start">
+                                    <HorizontalStackLayout>
+                                        <Image  Source="{Binding LogoUrl}"  WidthRequest="50"/>
+                                        <VerticalStackLayout Grid.Column ="0"  Spacing="5" Margin="10,0">
+                                            <Label  Text="{Binding Name}" FontSize="Medium" FontFamily="OpenSans-Semibold"/>
+                                            <Label  Text="{Binding Price}" FontSize="Small"/>
+
+                                        </VerticalStackLayout>
+                                    </HorizontalStackLayout>
+                                    
+                           
+                                </StackLayout>
+                                <StackLayout  Grid.Column="1" HorizontalOptions="EndAndExpand">
+                                    <Frame x:Name="FramePercent"  BackgroundColor="#080a15">
+                                    <HorizontalStackLayout >
+                                        <Label Grid.Column="1" x:Name="TextPercent" Text="{Binding  PercentChange24h}"></Label>
+                                        <Label Grid.Column="1" Text ="%"></Label>
+                                </HorizontalStackLayout>
+                                  
+                                </Frame>
+                                </StackLayout>
+                            </Grid>
+                        </HorizontalStackLayout>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            
+           
+            
+            
+        </Frame>
+        <Image Source="back.jpg"
+           Aspect="AspectFill"
+           Grid.Column="1"
+           HorizontalOptions="FillAndExpand"
+           VerticalOptions="FillAndExpand" />
+    </Grid>
+</ContentPage>

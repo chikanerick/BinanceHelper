@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Binance.MainPage" >
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="18*" />
+        </Grid.ColumnDefinitions>
+        <StackLayout Grid.Column="0" BackgroundColor="#141722">
+            <ImageButton Clicked="GoTrade" WidthRequest="40" CornerRadius="10"  Source="main.png" Margin="20" HeightRequest="40" HorizontalOptions="CenterAndExpand"></ImageButton>
+            <ImageButton Clicked="GoWallet" WidthRequest="40" CornerRadius="10"  Source="koshel.png" Margin="20" HeightRequest="40" HorizontalOptions="CenterAndExpand"></ImageButton>
+            <ImageButton Clicked="GoRobot" WidthRequest="40" CornerRadius="10"  Source="robot.png" Margin="20" HeightRequest="40" HorizontalOptions="CenterAndExpand"></ImageButton>
+            <ImageButton Clicked="GoKolendar" WidthRequest="40" CornerRadius="10"  Source="kolendar.png" Margin="20" HeightRequest="40" HorizontalOptions="CenterAndExpand"></ImageButton>
+            <ImageButton Clicked="GoSettings" WidthRequest="40" CornerRadius="10"  Source="nastr.png" Margin="20" HeightRequest="40" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand"/>
+        </StackLayout>
+        <StackLayout Grid.Column="1">
+            <HorizontalStackLayout>
+
+                <VerticalStackLayout Margin ="10"  HorizontalOptions="Start" Spacing="10" VerticalOptions="StartAndExpand">
+                    <HorizontalStackLayout  Margin ="10"  HorizontalOptions="Start" Spacing="20" >
+                        <Frame CornerRadius="10" BackgroundColor="#141722">
+                            <VerticalStackLayout>
+                                <HorizontalStackLayout >
+                                    <Image Source="btclogo.png" HeightRequest="30" HorizontalOptions="Start" Margin="5" />
+                                    <Label FontSize="20" FontFamily="OpenSans-Semibold" VerticalOptions="Center">BBBBTC/USDT</Label>
+                                </HorizontalStackLayout>
+
+                                <HorizontalStackLayout HorizontalOptions="Center">
+                                    <Label FontSize="25" FontFamily="OpenSans-Semibold" x:Name ="BTCprice" VerticalOptions="Center" HorizontalOptions="Center">"Тут будет цена"</Label>
+                                    <Image x:Name ="StrelkaBTC" Source="strelkaV.png"></Image>
+                                </HorizontalStackLayout>
+
+                            </VerticalStackLayout>
+                            
+                        </Frame>
+                        <Frame CornerRadius="10" BackgroundColor="#141722">
+                            <VerticalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Image Source="ethlogo.png" HeightRequest="30" HorizontalOptions="Start" Margin="5" />
+                                    <Label FontSize="20" FontFamily="OpenSans-Semibold" VerticalOptions="Center" >ETH/USDT</Label>
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout HorizontalOptions="Center">
+                                    <Label FontSize="25" FontFamily="OpenSans-Semibold" x:Name ="ETHprice" VerticalOptions="Center" HorizontalOptions="Center">"Тут будет цена"</Label>
+                                    <Image  x:Name ="StrelkaETH"  Source="strelkaV.png"></Image>
+                                </HorizontalStackLayout>
+
+
+                            </VerticalStackLayout>
+                           
+                        </Frame>
+                        <Frame CornerRadius="10" BackgroundColor="#141722">
+                            <VerticalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Image Source="ltclogo.png" HeightRequest="30" HorizontalOptions="Start" Margin="5" />
+                                    <Label FontSize="20" FontFamily="OpenSans-Semibold" VerticalOptions="Center" >LTC/USDT</Label>
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout HorizontalOptions="Center">
+                                    <Label FontSize="25" FontFamily="OpenSans-Semibold" x:Name ="LTCprice" VerticalOptions="Center" HorizontalOptions="Center">"Тут будет цена"</Label>
+                                    <Image x:Name ="StrelkaLTC" Source="strelkaV.png"> </Image>
+                                </HorizontalStackLayout>
+
+                            </VerticalStackLayout>
+                           
+                        </Frame>
+                      
+
+                    </HorizontalStackLayout>
+
+                    <Frame x:Name="FrameGrafic" Margin ="10,0" BackgroundColor ="#141722"  Padding = "0"  HorizontalOptions = "LayoutOptions.FillAndExpand" VerticalOptions = "LayoutOptions.FillAndExpand">
+                        
+                    </Frame>
+
+
+
+
+
+                </VerticalStackLayout>
+              
+               
+                <VerticalStackLayout  >
+                    <Frame CornerRadius="10" BackgroundColor="#141722" Margin="0,20" >
+                        <HorizontalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                            <Button Clicked="OnButtonNews1Clicked" x:Name ="News1" Margin="5,5" BackgroundColor="#141722" TextColor="White" Text="Популярное"></Button>
+                            <Button Clicked="OnButtonNews2Clicked" x:Name ="News2" Margin="5,5" BackgroundColor="#141722" TextColor="White" Text="Биржы"></Button>
+                            <Button Clicked="OnButtonNews3Clicked" x:Name ="News3" Margin="5,5" BackgroundColor="#141722" TextColor="White" Text="Блокчейн"></Button>
+                            <Button Clicked="OnButtonNews4Clicked" x:Name ="News4" Margin="5,5" BackgroundColor="#141722" TextColor="White" Text="Биткоин"></Button>
+                            <Button Clicked="OnButtonNews5Clicked" x:Name ="News5" Margin="5,5" BackgroundColor="#141722" TextColor="White" Text="NFT"></Button>
+                            <Button Clicked="OnButtonNews6Clicked" x:Name ="News6" Margin="5,5" BackgroundColor="#141722" TextColor="White" Text="IDO"></Button>
+                            
+                           
+                        </HorizontalStackLayout>
+                    </Frame>
+                    <ScrollView Orientation="Vertical" HeightRequest="470">
+                       
+                            <Frame CornerRadius="10" BackgroundColor="#141722" Margin="0,0" WidthRequest="650" >
+                        <VerticalStackLayout >
+                            
+                            <Label FontSize="25" x:Name ="Title" VerticalOptions="Center">"Название новости"</Label>
+                            <Image Source="" x:Name="Image" Margin="10"></Image>
+                            <Label FontSize="15" x:Name ="Text1" VerticalOptions="Center">"Содержание"</Label>
+                                <Label FontSize ="15" Margin="10" x:Name="DataOfpublication"></Label>
+                                <Button Text="Перейти к источнику" Margin="0,10"></Button>
+                           
+                            <HorizontalStackLayout HorizontalOptions="Center">
+                                
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </Frame>
+                       
+                    </ScrollView>
+
+                    <HorizontalStackLayout Margin="10">
+
+                        <Button x:Name="ButtonBack" Clicked="OnButtonBackClicked" TextColor="White" BackgroundColor="#141722" Text="Назад" HorizontalOptions="Center" WidthRequest="320"></Button>
+                        <Button x:Name="ButtonNext" Clicked="OnButtonNextClicked" TextColor="White" BackgroundColor="#141722" Text="Вперед" HorizontalOptions="Center" WidthRequest="320"></Button>
+                    </HorizontalStackLayout>
+
+
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+           
+            
+
+        </StackLayout>
+
+
+     
+    </Grid>
+
+
+
+
+
+</ContentPage>
+    
